@@ -4,8 +4,14 @@ var port = 80;
 
 var server = http.createServer(function(req, res){
     fs.readFile("./api.txt", "utf-8", function(err, data){
-        res.writeHead(200, {"Content-Type": "text/plain"});
-        res.write(data);
+        res.writeHead(200, {"Content-Type": "text/html"});
+        var x = JSON.parse(data);
+        res.write(`
+        <h1>Node Development</h1>
+        <h1>Name : ${x["name"]}</h1>
+        <h1>Age : ${x["age"]}</h1>
+        <h1>Gender : ${x["gender"]}</h1>
+        `);
         res.end();
     });
 });
