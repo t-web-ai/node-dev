@@ -3,7 +3,7 @@ var http = require("http");
 var port = 80;
 
 var server = http.createServer(function(req, res){
-    fs.readFile("/api.txt", "utf-8", function(err, data){
+    fs.readFile("./api.txt", "utf-8", function(err, data){
         if(err){
             res.write("404 File is not found!");
         } else {
