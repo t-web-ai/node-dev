@@ -4,6 +4,9 @@ var port = 80;
 
 var server = http.createServer(function(req, res){
     fs.readFile("/api.txt", "utf-8", function(err, data){
+        if(err){
+            res.write("404 File is not found!");
+        } else {
         res.writeHead(200, {"Content-Type": "text/html"});
         var x = JSON.parse(data)[0];
         res.write(`
@@ -13,6 +16,7 @@ var server = http.createServer(function(req, res){
         <h1>Gender : ${x["gender"]}</h1>
         `);
         res.end();
+        }
     });
 });
 
