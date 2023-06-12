@@ -3,7 +3,7 @@ var http = require("http");
 var port = 80;
 
 var server = http.createServer(function(req, res){
-    fs.readFile("./api.txt", "utf-8", function(err, data){
+    fs.readFile("/api.txt", "utf-8", function(err, data){
         res.writeHead(200, {"Content-Type": "text/html"});
         var x = JSON.parse(data)[0];
         res.write(`
