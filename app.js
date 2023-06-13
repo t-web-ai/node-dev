@@ -16,7 +16,7 @@ var server = http.createServer(function(req, res){
         <h1>Age : ${x["age"]}</h1>
         <h1>Gender : ${x["gender"]}</h1>
         `);
-        res.end();
+        res.end(__filename);
         }
     });
 });
