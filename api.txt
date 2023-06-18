@@ -1,7 +1,0 @@
-[
-{
-"name":"Toee Thiha Kyaw",
-"age":21,
-"gender": "male"
-}
-]
