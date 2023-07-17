@@ -27,7 +27,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transform: scale(0.7);
+            transform: scale(0.85);
             transition: 0.2s;
         }
 
@@ -137,9 +137,7 @@
         let otp;
         let center = document.querySelector(".center");
         let two = document.querySelectorAll(".two");
-        setTimeout(function () {
-            center.style.transform = "scale(1)";
-        }, 0);
+        
         let txt = document.querySelectorAll(".otp");
         let onext = function (e) {
             if (e.target.value.length == 1) {
