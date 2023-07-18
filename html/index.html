@@ -61,7 +61,16 @@
 
         .two, .process {
             display: none;
-        } 
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
         .otp-code {
             display: flex;
             justify-content: center;
@@ -105,12 +114,12 @@
                 <tr class="two">
                     <td>
                         <div class="otp-code">
-                            <input type="text" class="otp">
-                            <input type="text" class="otp">
-                            <input type="text" class="otp">
-                            <input type="text" class="otp">
-                            <input type="text" class="otp">
-                            <input type="text" class="otp">
+                            <input type="number" class="otp">
+                            <input type="number" class="otp">
+                            <input type="number" class="otp">
+                            <input type="number" class="otp">
+                            <input type="number" class="otp">
+                            <input type="number" class="otp">
                         </div>
                     </td>
                 </tr>
@@ -144,9 +153,9 @@
                 }
             }
         }
-            for (let x of txt) {
-                x.oninput = onext;
-                x.onclick = function (e) {
+        for (let x of txt) {
+            x.oninput = onext;
+            x.onclick = function (e) {
                 e.target.value = "";
             }
         }
