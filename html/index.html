@@ -59,15 +59,15 @@
             font-size: 100px;
         }
 
-        .two, .process {
+        /* .two, .process {
             display: none;
-        }
+        } */
         .otp-code {
             display: flex;
             justify-content: center;
             margin: 5px 0;
         }
-        
+
         input[class="otp"] {
             width: 40px;
             height: 40px;
@@ -105,12 +105,12 @@
                 <tr class="two">
                     <td>
                         <div class="otp-code">
-                            <input type="text" class="otp" maxlength="1">
-                            <input type="text" class="otp" maxlength="1">
-                            <input type="text" class="otp" maxlength="1">
-                            <input type="text" class="otp" maxlength="1">
-                            <input type="text" class="otp" maxlength="1">
-                            <input type="text" class="otp" maxlength="1">
+                            <input type="text" class="otp">
+                            <input type="text" class="otp">
+                            <input type="text" class="otp">
+                            <input type="text" class="otp">
+                            <input type="text" class="otp">
+                            <input type="text" class="otp">
                         </div>
                     </td>
                 </tr>
@@ -128,9 +128,10 @@
         let otp;
         let center = document.querySelector(".center");
         let two = document.querySelectorAll(".two");
-        
+
         let txt = document.querySelectorAll(".otp");
         let onext = function (e) {
+            e.target.value = e.target.value.toUpperCase().substr(e.target.value.length - 1);
             if (e.target.value.length == 1) {
                 for (let i = 0; i < txt.length; i++) {
                     if (e.target == txt[i]) {
@@ -143,9 +144,9 @@
                 }
             }
         }
-        for (let x of txt) {
-            x.onkeyup = onext;
-            x.onclick = function (e) {
+            for (let x of txt) {
+                x.oninput = onext;
+                x.onclick = function (e) {
                 e.target.value = "";
             }
         }
