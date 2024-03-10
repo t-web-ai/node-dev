@@ -27,7 +27,7 @@ app.post("/mail", (req, res)=>{
         service : "Gmail",
         auth : {
             user : "otpservice38@gmail.com",
-            pass : "epnucrjkayzfzuws"
+            pass : "fkzk xklz pxvb jewe"
         }
     });
     const mail_option = {
